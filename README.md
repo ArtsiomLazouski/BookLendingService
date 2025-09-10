@@ -66,3 +66,5 @@ Nice to have in future:
 - Pagination for GET /books
 - Concurrency token to guard double checkout
 - Logging
+
+This repo is intentionally minimal and self-contained for the test: a single API project with clear internal layers (Controllers -> Service -> EF Core). In a real-world service we’d split into separate Api / Application / Domain / Infrastructure projects and add cross-cutting concerns like validation, structured logging, tracing, and CI/CD.
