@@ -30,9 +30,9 @@ Endpoints:
   400 if validation fails
 
 - List books GET /books?showAll=false
-  Default showAll=false -> only available.
-  showAll=true -> all books.
-  200 OK -> list sorted by Title.
+  - Default showAll=false -> only available.
+  - showAll=true -> all books.
+  - 200 OK -> list sorted by Title.
 
 - Check out POST /books/{id}/checkout
   200 OK -> book becomes isAvailable: false
