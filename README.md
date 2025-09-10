@@ -5,8 +5,8 @@ What you can do (requirements)
 - Add a book – POST /books
 
 - List books – GET /books?showAll=false
-By default returns only available books.
-If showAll=true, returns all books.
+  - By default returns only available books.
+  - If showAll=true, returns all books.
 
 - Check out a book – POST /books/{id}/checkout
 
@@ -26,8 +26,8 @@ Endpoints:
         "author": "Hunt & Thomas",
         "isbn": "9780201616224"
       }
-  201 Created -> the created book
-  400 if validation fails
+  - 201 Created -> the created book
+  - 400 if validation fails
 
 - List books GET /books?showAll=false
   - Default showAll=false -> only available.
@@ -35,14 +35,14 @@ Endpoints:
   - 200 OK -> list sorted by Title.
 
 - Check out POST /books/{id}/checkout
-  200 OK -> book becomes isAvailable: false
-  404 if not found
-  409 if already checked out
+  - 200 OK -> book becomes isAvailable: false
+  - 404 if not found
+  - 409 if already checked out
 
 - Return POST /books/{id}/return
-  200 OK → book becomes isAvailable: true
-  404 if not found
-  409 if already available
+  - 200 OK → book becomes isAvailable: true
+  - 404 if not found
+  - 409 if already available
 
 Run in Docker
 docker build -t booklend-api:local .
