@@ -44,20 +44,23 @@ Endpoints:
   - 404 if not found
   - 409 if already available
 
-Run in Docker:
+## Run in Docker
 
-  docker build -t booklend-api:local .
-  docker run --rm -p 8080:8080 --name booklend booklend-api:local
+```bash
+docker build -t booklend-api:local .
+docker run --rm -p 8080:8080 --name booklend booklend-api:local
+```
 
-Deploy later (Terraform on AWS):
+## Deploy later (Terraform on AWS)
 
-terraform/ contains a simple ECS Fargate + ALB setup.
+`terraform/` contains a simple ECS Fargate + ALB setup. Once you have an image in ECR:
 
-Once you have an image in ECR:
+```bash
+cd terraform
+terraform init
+terraform apply -var "region=eu-central-1" -var "image_url=<ACCOUNT>.dkr.ecr.eu-central-1.amazonaws.com/<repo>:<tag>"
+```
 
-  cd terraform
-  terraform init
-  terraform apply -var "region=eu-central-1" -var "image_url=<ACCOUNT>.dkr.ecr.eu-central-1.amazonaws.com/<repo>:<tag>"
 
 Nice to have in future:
 - Pagination for GET /books
